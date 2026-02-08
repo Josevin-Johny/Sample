@@ -4,3 +4,7 @@ enum SecondsLamp {
     case off
 }
 
+enum FiveHourLamp {
+    case red
+    case noColor
+}
