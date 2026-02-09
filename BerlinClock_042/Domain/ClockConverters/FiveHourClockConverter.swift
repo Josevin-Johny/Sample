@@ -8,6 +8,8 @@ class FiveHourClockConverter {
             return [.noColor, .noColor, .noColor, .noColor]
         } else  if (hours.value / 5 < 2) {
             return [.red, .noColor, .noColor, .noColor]
+        } else  if (hours.value / 5 < 3) {
+            return [.red, .red, .noColor, .noColor]
         }
         return [.noColor, .noColor, .noColor, .noColor]
     }
