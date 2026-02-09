@@ -8,3 +8,8 @@ enum FiveHourLamp {
     case redColor
     case noColor
 }
+
+enum OneHourLamp {
+    case redColor
+    case noColor
+}
