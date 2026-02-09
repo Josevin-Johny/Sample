@@ -34,4 +34,14 @@ struct OneHourClockConverterTests {
         //Assert
         #expect(result == [.redColor, .noColor, .noColor, .noColor])
     }
+    
+    @Test(arguments: [2, 7, 12, 17, 22])
+    func oneHourClockConverter_when_TwoLampsOn(hour: Int) {
+        //Arrange
+        let oneHoursConverter = OneHourClockConverter()
+        //Act
+        let result = oneHoursConverter.convertToOneHourLamp(hour: hour)
+        //Assert
+        #expect(result == [.redColor, .redColor, .noColor, .noColor])
+    }
 }
