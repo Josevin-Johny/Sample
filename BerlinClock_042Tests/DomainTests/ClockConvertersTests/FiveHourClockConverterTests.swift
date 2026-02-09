@@ -24,4 +24,14 @@ struct FiveHourClockConverterTests {
         //Asser
         #expect(result == [.noColor, .noColor, .noColor, .noColor])
     }
+    
+    @Test(arguments: [FiveHour(5)!,FiveHour(9)!])
+    func fiveHourClockConverter_when_value_fiveToNine(hours: FiveHour) {
+        //Arrange
+        let fiveHoursConverter = FiveHourClockConverter()
+        //Act
+        let result = fiveHoursConverter.convertToFiveHourLamp(hours: hours)
+        //Assert
+        #expect(result == [.red, .noColor, .noColor, .noColor])
+    }
 }
