@@ -16,5 +16,14 @@ struct FiveMinuteClockConverterTests {
         #expect(result.count == 11)
     }
     
+    @Test(arguments: [0, 1, 4])
+    func fiveMinuteConverter_when_lessThanFive_allOff(minutes: Int) {
+        //Arrange
+        let fiveMinuteClockConverter = FiveMinuteClockConverter()
+        //Act
+        let result = fiveMinuteClockConverter.convertToFiveMinuteLamp(minutes: minutes)
+        //Assert
+        #expect(result == [.noColor, .noColor, .noColor, .noColor, .noColor, .noColor, .noColor, .noColor, .noColor, .noColor, .noColor])
+    }
 }
 
