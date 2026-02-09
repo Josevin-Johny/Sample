@@ -5,8 +5,8 @@ import Testing
 @Suite("Five Hour clock convertion validation")
 struct FiveHourClockConverterTests {
     
-    @Test(arguments: [5,7,8])
-    func fiveHourClockConverter_Validate_LampCount(hours: Int) {
+    @Test(arguments: [FiveHour(4)!,FiveHour(23)!])
+    func fiveHourClockConverter_Validate_LampCount(hours: FiveHour) {
         //Arrange
         let fiveHoursConverter = FiveHourClockConverter()
         //Act
@@ -15,8 +15,8 @@ struct FiveHourClockConverterTests {
         #expect(result.count == 4)
     }
     
-    @Test(arguments: [0,1,4])
-    func fiveHourClockConver_when_value_lessThanFive(hours: Int) {
+    @Test(arguments: [FiveHour(0)!,FiveHour(1)!,FiveHour(4)!])
+    func fiveHourClockConver_when_value_lessThanFive(hours: FiveHour) {
         //Arrange
         let fiveHoursConverter = FiveHourClockConverter()
         //Act
