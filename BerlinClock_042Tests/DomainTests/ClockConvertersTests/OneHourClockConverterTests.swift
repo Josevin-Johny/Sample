@@ -5,8 +5,8 @@ import Testing
 @Suite("One Hour clock convertion validation")
 struct OneHourClockConverterTests {
     
-    @Test(arguments: [1,2,3,4])
-    func oneHourClockConverter_Validate_LampCount(hour: Int) {
+    @Test(arguments: [Hour(1)!,Hour(2)!,Hour(3)!,Hour(4)!])
+    func oneHourClockConverter_Validate_LampCount(hour: Hour) {
         //Arrange
         let oneHoursConverter = OneHourClockConverter()
         //Act
@@ -15,8 +15,8 @@ struct OneHourClockConverterTests {
         #expect(result.count == 4)
     }
     
-    @Test(arguments: [0, 5, 10, 15, 20])
-    func oneHourClockConverter_when_zeroLampsOn(hour: Int) {
+    @Test(arguments: [Hour(0)!, Hour(5)!, Hour(10)!,Hour(15)!, Hour(20)!])
+    func oneHourClockConverter_when_zeroLampsOn(hour: Hour) {
         //Arrange
         let oneHoursConverter = OneHourClockConverter()
         //Act
@@ -25,8 +25,8 @@ struct OneHourClockConverterTests {
         #expect(result == [.noColor, .noColor, .noColor, .noColor])
     }
     
-    @Test(arguments: [1, 6, 11, 16, 21])
-    func oneHourClockConverter_when_OneLampsOn(hour: Int) {
+    @Test(arguments: [Hour(1)!, Hour(6)!, Hour(11)!, Hour(16)!, Hour(21)!])
+    func oneHourClockConverter_when_OneLampsOn(hour: Hour) {
         //Arrange
         let oneHoursConverter = OneHourClockConverter()
         //Act
@@ -35,8 +35,8 @@ struct OneHourClockConverterTests {
         #expect(result == [.redColor, .noColor, .noColor, .noColor])
     }
     
-    @Test(arguments: [2, 7, 12, 17, 22])
-    func oneHourClockConverter_when_TwoLampsOn(hour: Int) {
+    @Test(arguments: [Hour(2)!, Hour(7)!, Hour(12)!, Hour(17)!, Hour(22)!])
+    func oneHourClockConverter_when_TwoLampsOn(hour: Hour) {
         //Arrange
         let oneHoursConverter = OneHourClockConverter()
         //Act

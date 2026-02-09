@@ -1,7 +1,7 @@
 
 import Foundation
 
-struct FiveHour {
+struct Hour {
     let value: Int
     
     init?(_ value: Int) {
