@@ -45,5 +45,15 @@ struct FiveMinuteClockConverterTests {
         //Assert
         #expect(result == [.yellowColor, .yellowColor, .noColor, .noColor, .noColor, .noColor, .noColor, .noColor, .noColor, .noColor, .noColor])
     }
+    
+    @Test(arguments: [15, 17, 19])
+    func fiveMinuteConverter_when_fifteenToNineteen_threeLampsOn(minutes: Int) {
+        //Arrange
+        let fiveMinuteClockConverter = FiveMinuteClockConverter()
+        //Act
+        let result = fiveMinuteClockConverter.convertToFiveMinuteLamp(minutes: minutes)
+        //Assert
+        #expect(result == [.yellowColor, .yellowColor, .redColor, .noColor, .noColor, .noColor, .noColor, .noColor, .noColor, .noColor, .noColor])
+    }
 }
 
